@@ -1,6 +1,6 @@
 ---
 import NavigationBar from "components/NavigationBar.astro";
-import { getLangFromUrl } from '../i18n/utils';
+import { getLangFromUrl } from "../i18n/utils";
 interface Props {
 	title: string;
 }
@@ -8,8 +8,15 @@ const lang = getLangFromUrl(Astro.url);
 const { title } = Astro.props;
 ---
 
-<!doctype html>
-<html lang={lang}>
+<script is:inline>
+const localTheme = localStorage.getItem("theme");
+if (localTheme) {
+	document.documentElement.classList.add("theme", 'dark');
+}else{
+	document.documentElement.classList.remove("theme");
+}
+</script>
+<html lang={lang} >
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -19,7 +26,7 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<NavigationBar />
-	<body class="bg-background text-white">
+	<body class="dark:bg-background bg-white text-white">
 		<slot />
 	</body>
 

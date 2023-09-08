@@ -53,12 +53,12 @@ const NavigationMenu = ({ lang, children }: Props) => {
 
         </ul>
         <div class={'flex md:hidden justify-center gap-5  mt-2'}>
-          <ThemePicker />
-          <LanguagePicker lang={lang}/>
+          <ThemePicker  />
+          <LanguagePicker lang={lang} />
         </div>
       </div>
       <div class={'gap-2 items-center hidden md:flex'}>
-        <ThemePicker />
+        <ThemePicker  />
         <LanguagePicker lang={lang} />
       </div>
     </>
