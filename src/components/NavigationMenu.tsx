@@ -11,7 +11,14 @@ interface Props {
 const NavigationMenu = ({ lang, children }: Props) => {
   const [open, setOpen] = useState(false);
   const t = useTranslations(lang);
+  const scrollToSection = (path: string) => {
+    const element = document.getElementById(path);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setOpen(false);
 
+    }
+  }
   return (
     <>
       <button onClick={() => setOpen(open => !open)}
@@ -39,26 +46,26 @@ const NavigationMenu = ({ lang, children }: Props) => {
       </button>
       <div class={`${open ? null : 'hidden'} w-full md:block md:w-auto`} id="navbar-default">
         <ul
-          class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+          class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-white md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-background md:dark:bg-background dark:border-gray-700"
         >
           {
             navItems.map(({ path, label }) =>
-              <li key={label}>
-                <a
-                  href={path}
-                  class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                  aria-current="page">{t(`nav.${label}`)}</a>
+              <li key={label} onClick={() => scrollToSection(path)}>
+                <div
+                  href={'#' + path}
+                  class="cursor-pointer block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0 dark:text-white md:dark:hover:text-primary dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  aria-current="page">{t(`nav.${label}`)}</div>
               </li>)
           }
 
         </ul>
         <div class={'flex md:hidden justify-center gap-5  mt-2'}>
-          <ThemePicker  />
+          <ThemePicker />
           <LanguagePicker lang={lang} />
         </div>
       </div>
       <div class={'gap-2 items-center hidden md:flex'}>
-        <ThemePicker  />
+        <ThemePicker />
         <LanguagePicker lang={lang} />
       </div>
     </>

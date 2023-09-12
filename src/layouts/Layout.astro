@@ -1,6 +1,9 @@
 ---
 import NavigationBar from "components/NavigationBar.astro";
 import { getLangFromUrl } from "../i18n/utils";
+import "@fontsource-variable/quicksand";
+import { ViewTransitions } from 'astro:transitions';
+
 interface Props {
 	title: string;
 }
@@ -11,12 +14,13 @@ const { title } = Astro.props;
 <script is:inline>
 const localTheme = localStorage.getItem("theme");
 if (localTheme) {
-	document.documentElement.classList.add("theme", 'dark');
-}else{
+	document.documentElement.classList.add("theme", "dark");
+} else {
 	document.documentElement.classList.remove("theme");
 }
 </script>
-<html lang={lang} >
+
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -24,15 +28,17 @@ if (localTheme) {
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<ViewTransitions />
 	</head>
-	<NavigationBar />
-	<body class="dark:bg-background bg-white text-white">
+	<body class="dark:bg-background bg-white text-black dark:text-white">
+		<NavigationBar />
 		<slot />
 	</body>
 
 	<style is:global>
 		:root {
 			--background: 19, 21, 26;
+			--primary: 156, 246, 246;
 			--accent: 136, 58, 234;
 			--accent-light: 224, 204, 250;
 			--accent-dark: 49, 10, 101;
@@ -42,6 +48,16 @@ if (localTheme) {
 				rgb(var(--accent-light)) 30%,
 				white 60%
 			);
+		}
+		body {
+			font-family: "Quicksand Variable", sans-serif;
+		}
+		section{
+			padding: 4.5rem 1rem;
+			min-height: 100vh;
+		}
+		section{
+
 		}
 	</style>
 </html>

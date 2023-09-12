@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/preact": "^3.0.0",
     "@astrojs/tailwind": "^5.0.0",
+    "@fontsource-variable/quicksand": "^5.0.8",
     "astro": "^3.0.10",
     "lucide-preact": "^0.274.0",
     "preact": "^10.6.5",

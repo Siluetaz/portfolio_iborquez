@@ -1,0 +1,25 @@
+---
+import { getLangFromUrl, useTranslations } from "i18n/utils";
+import About from "./About.astro";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id="home" class="flex justify-evenly gap-x-5 flex-wrap items-center font-semibold">
+  <div class="flex flex-wrap gap-5 items-center justify-center">
+    <div
+      class="bg-gray-800 rounded border-gray-500 border flex flex-col items-center p-6 px-10 gap-5"
+    >
+      <img src={"iconcircle.webp"} class="w-full max-w-[12rem]" />
+      <div class="flex flex-col gap-3 items-center">
+        <p>Ismael Borquez</p>
+        <hr class="w-full border border-gray-500" />
+        <p>Desarrollador Web</p>
+      </div>
+    </div>
+  </div>
+  <h1 class="text-center text-4xl">
+    {t("home.title")}
+    <span class="text-primary"> Ismael Borquez</span>
+  </h1>
+</section>
