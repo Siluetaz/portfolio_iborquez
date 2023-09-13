@@ -1,5 +1,6 @@
 ---
 import { getLangFromUrl, useTranslations } from "i18n/utils";
+import TechCarousel from "./TechCarousel";
 const {
     project: {
         links,
@@ -14,47 +15,41 @@ const t = useTranslations(lang);
 ---
 
 <div
-    class="w-[18rem] sm:w-[26rem] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+    class="w-[18rem] sm:w-[26rem] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-between pb-5"
 >
-    <a href="#">
-        <img class="rounded-t-lg" src={desktop} alt="" />
-    </a>
-    <div class="p-5 w-full">
+    <div class='grow-1'>
         <a href="#">
-            <h5
-                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-            >
-                {name}
-            </h5>
+            <img class="rounded-t-lg" src={desktop} alt="" />
         </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            {description}
-        </p>
-        <div class="flex flex-col gap-5">
-            <div class="bg-blue-200 overflow-x-auto flex gap-1 no-scroll">
-                {
-                    technologies.map((tech: any) => (
-                        <span class="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-200">
-                            {tech}
-                        </span>
-                    ))
-                }
-            </div>
-            <div class="bg-red-200">
-                {
-                    Object.entries(links).map(([key, value]) =>
-                        value ? (
-                            <a
-                                href={value as string}
-                                target="_blank"
-                                class="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-200"
-                            >
-                                {t("projects." + key)}
-                            </a>
-                        ) : null,
-                    )
-                }
-            </div>
+        <div class="p-5 w-full">
+            <a href="#">
+                <h5
+                    class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                >
+                    {name}
+                </h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 h-[8rem]">
+                {description}
+            </p>
         </div>
+    </div>
+    <div class='grow-0'>
+        <TechCarousel client:visible technologies={technologies} />
+    </div>
+    <div class="flex items-center justify-center gap-5 grow-0">
+        {
+            Object.entries(links).map(([key, value]) =>
+                value ? (
+                    <a
+                        href={value as string}
+                        target="_blank"
+                        class="inline-block px-3 py-1 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-200"
+                    >
+                        {t("projects." + key)}
+                    </a>
+                ) : null,
+            )
+        }
     </div>
 </div>

@@ -1,8 +1,14 @@
 ---
+import { getLangFromUrl } from "i18n/utils";
 import { projects } from "../../../data.json";
-import Card from "components/projects/Card.astro";
+import Card from "./Card";
+const lang = getLangFromUrl(Astro.url);
 ---
 
-<section id="projects" class='flex gap-5 overflow-x-auto no-scroll'>
-  {projects.map((project) => <Card project={project} />)}
+<section id="projects" class="flex gap-10 overflow-x-auto no-scroll">
+  {
+    projects.map((project) => (
+      <Card client:only lang={lang} project={project} />
+    ))
+  }
 </section>

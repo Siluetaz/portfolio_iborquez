@@ -3,6 +3,6 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "jsx": "react-jsx",
-    "jsxImportSource": "preact"
+    "jsxImportSource": "react"
   }
 }

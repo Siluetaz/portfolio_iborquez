@@ -1,5 +1,5 @@
-import { MoonIcon, SunIcon } from 'lucide-preact'
-import { useEffect, useState } from 'preact/hooks'
+import { MoonIcon, SunIcon } from 'lucide-react';
+import { useEffect, useState } from 'react';
 interface Props {
   className?: string
 }
@@ -25,8 +25,8 @@ const ThemePicker = ({ className }: Props) => {
     }
   }
   return (
-    <div class={className}>
-      <button type="button" onClick={() => toggleTheme()} data-dropdown-toggle="theme-dropdown-menu" class="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+    <div className={className}>
+      <button type="button" onClick={() => toggleTheme()} data-dropdown-toggle="theme-dropdown-menu" className="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
         {
           theme === null ? null : theme ? <MoonIcon />
             : <SunIcon />

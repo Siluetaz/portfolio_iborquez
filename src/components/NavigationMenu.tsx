@@ -1,7 +1,7 @@
-import { useState } from 'preact/hooks';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import LanguagePicker from "components/LanguagePicker";
 import ThemePicker from "components/ThemePicker";
+import { useState } from 'react';
 import { navItems } from 'utils/navigationLinks';
 interface Props {
   lang: string;
@@ -21,16 +21,16 @@ const NavigationMenu = ({ lang, children }: Props) => {
   }
   return (
     <>
-      <button onClick={() => setOpen(open => !open)}
+      <button onClick={() => setOpen((open: any) => !open)}
         data-collapse-toggle="navbar-default"
         type="button"
-        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
         aria-controls="navbar-default"
         aria-expanded="false"
       >
-        <span class="sr-only">Open main menu</span>
+        <span className="sr-only">Open main menu</span>
         <svg
-          class="w-5 h-5"
+          className="w-5 h-5"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -38,33 +38,33 @@ const NavigationMenu = ({ lang, children }: Props) => {
         >
           <path
             stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
             d="M1 1h15M1 7h15M1 13h15"></path>
         </svg>
       </button>
-      <div class={`${open ? null : 'hidden'} w-full md:block md:w-auto`} id="navbar-default">
+      <div className={`${open ? null : 'hidden'} w-full md:block md:w-auto`} id="navbar-default">
         <ul
-          class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-white md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-background md:dark:bg-background dark:border-gray-700"
+          className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-white md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-background md:dark:bg-background dark:border-gray-700"
         >
           {
             navItems.map(({ path, label }) =>
               <li key={label} onClick={() => scrollToSection(path)}>
                 <div
-                  href={'#' + path}
-                  class="cursor-pointer block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0 dark:text-white md:dark:hover:text-primary dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  // href={'#' + path}
+                  className="cursor-pointer block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0 dark:text-white md:dark:hover:text-primary dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                   aria-current="page">{t(`nav.${label}`)}</div>
               </li>)
           }
 
         </ul>
-        <div class={'flex md:hidden justify-center gap-5  mt-2'}>
+        <div className={'flex md:hidden justify-center gap-5  mt-2'}>
           <ThemePicker />
           <LanguagePicker lang={lang} />
         </div>
       </div>
-      <div class={'gap-2 items-center hidden md:flex'}>
+      <div className={'gap-2 items-center hidden md:flex'}>
         <ThemePicker />
         <LanguagePicker lang={lang} />
       </div>
