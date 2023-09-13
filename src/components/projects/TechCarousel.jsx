@@ -14,18 +14,11 @@ const TechCarousel = ({ technologies, slider }) => {
     arrows: false,
     infinite: true,
     slidesToShow: 3, slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     speed: 2000,
     autoplaySpeed: 0,
     draggable: false,
   };
-
-  useEffect(() => {
-    if (slider) {
-      const { current: { slickPause } } = slider
-      slickPause()
-    }
-  }, [slider])
 
   const pause = (slider) => {
     const { current: { slickPause } } = slider

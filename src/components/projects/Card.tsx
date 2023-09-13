@@ -1,6 +1,6 @@
 import { useTranslations, getLangFromUrl } from "i18n/utils";
 import TechCarousel from "./TechCarousel";
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 interface Props {
   lang: any
