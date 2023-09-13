@@ -1,0 +1,8 @@
+---
+import { projects } from "../../../data.json";
+import Card from "components/projects/Card.astro";
+---
+
+<section id="projects" class='flex gap-5 overflow-x-auto no-scroll'>
+  {projects.map((project) => <Card project={project} />)}
+</section>

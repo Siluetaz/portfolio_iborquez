@@ -1,0 +1,133 @@
+{
+  "aboutData": {
+    "name": "Ismael Borquez",
+    "degree": "Analista Programador",
+    "subtitle": "Me considero alguien...",
+    "presentationCard": "Trabajador, que se desenvuelve bien en equipo, con altas capacidades interpersonales y de organización, siempre a la espera de adquirir nuevas habilidades y de crecer profesionalmente, proactivo e independiente, siendo la responsabilidad mi valor más potente.",
+    "toolsTitle": "Herramientas que he utilizado"
+  },
+  "projects": [
+    {
+      "name": "Nefuen Trading Website",
+      "imgDirection": {
+        "desktop": "/images/nefuen-home.png",
+        "mobile": "/images/calculator-app-mobile.webp"
+      },
+      "description": "Página web realizada para la empresa Nefuen Trading, con el fin de mostrar sus servicios y productos, un formulario de contacto y escalable para futuras implementaciones.",
+      "technologies": [
+        "HTML",
+        "Tailwind",
+        "Next.js",
+        "Figma",
+        "VSC"
+      ],
+      "links": {
+        "siteUrl": "https://siluetaz.github.io/calculator-app-frontend-mentor/",
+        "codeUrl": "https://github.com/Siluetaz/calculator-app-frontend-mentor"
+      }
+    },
+    {
+      "name": "Space tourism",
+      "imgDirection": {
+        "desktop": "/images/space-tourism.webp",
+        "mobile": "/images/space-tourism-mobile.webp"
+      },
+      "description": "Proyecto realizado con el fin de practicar FrontEnd, animaciones, flexbox, grid, y manejo de componentes con Vue, el diseño del proyecto fue replicado de Frontend Mentor.",
+      "technologies": [
+        "HTML",
+        "Sass",
+        "Vue",
+        "Figma",
+        "VSC",
+        "Vite",
+        "JS"
+      ],
+      "links": {
+        "siteUrl": "https://siluetaz.github.io/space-tourism-frontend-mentor/",
+        "codeUrl": "https://github.com/Siluetaz/space-tourism-frontend-mentor"
+      }
+    },
+    {
+      "name": "Interactive card",
+      "imgDirection": {
+        "desktop": "/images/interactive-card.webp",
+        "mobile": "/images/interactive-card-mobile.webp"
+      },
+      "description": "Proyecto realizado con el fin de practicar FrontEnd, reactividad con Vue y lógica de JavaScript, el diseño del proyecto fue replicado de Frontend Mentor.",
+      "technologies": [
+        "HTML",
+        "Sass",
+        "Vue",
+        "Figma",
+        "VSC",
+        "Vite",
+        "JS"
+      ],
+      "links": {
+        "siteUrl": "https://siluetaz.github.io/interactive-card-frontend-mentor/",
+        "codeUrl": "https://github.com/Siluetaz/interactive-card-frontend-mentor"
+      }
+    },
+    {
+      "name": "Calculator app",
+      "imgDirection": {
+        "desktop": "/images/calculator-app.webp",
+        "mobile": "/images/calculator-app-mobile.webp"
+      },
+      "description": " Proyecto realizado con el fin de practicar la lógica de JavaScript y Vue.",
+      "technologies": [
+        "HTML",
+        "Sass",
+        "Figma",
+        "VSC",
+        "Vite",
+        "JS"
+      ],
+      "links": {
+        "siteUrl": "https://siluetaz.github.io/calculator-app-frontend-mentor/",
+        "codeUrl": "https://github.com/Siluetaz/calculator-app-frontend-mentor"
+      }
+    }
+  ],
+  "workData": {
+    "works": [
+      {
+        "img": "/ecomac.webp",
+        "titleFront": "Analista QA",
+        "subtitle": "Práctica Profesional",
+        "activities": "Participación proactiva en reuniones.Desarrollar proyectos en PHP-Laravel.Front end en HTML, Vue, Bootstrap y CSS.Proporcionar asistencia de control de calidad para desarrolladores internos.Creación y ejecución de casos de prueba"
+      }
+    ]
+  },
+  "educationData": {
+    "education": [
+      {
+        "img": "/inacap.webp",
+        "titleFront": "Analista Programador",
+        "subtitle": "Titulo técnico profesional",
+        "activities": "Desarrollo Backend con PHP.Desarrollo Frontend con HTML, CSS y JavaScript.Desarrollo Móvil con Java"
+      },
+      {
+        "img": "/udemy.webp",
+        "titleFront": "Master en webs Full Stack: Angular, Node, Laravel, Symfony +",
+        "subtitle": "Curso online",
+        "activities": "Desarrollo Backend con Laravel, Symfony y Node.Desarrollo Frontend con HTML, CSS y Angular.Desarrollo de webs SPA, aplicaciones web de una sola página, dinámicas y reactivas.Desarrollo de APIs RESTful, para un back-end independiente y separado del front-end o cliente"
+      }
+    ]
+  },
+  "sectionsData": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "works": "Experiencia",
+    "education": "Educación"
+  },
+  "homeData": {
+    "title": [
+      "Bienvenido",
+      "Soy ",
+      "Ismael Borquez"
+    ],
+    "presentation": "Analista programador, apasionado por el desarrollo y el adquirir nuevas habilidades y conocimientos."
+  }
+}

@@ -17,6 +17,8 @@ export const ui: UI = {
     'nav.Experience': 'Experience',
     'nav.Contact': 'Contact',
     "home.title": "Hi, I'm",
+    "projects.siteUrl": "View site",
+    "projects.codeUrl": "View code",
   },
   es: {
     'nav.Home': 'Inicio',
@@ -25,6 +27,7 @@ export const ui: UI = {
     'nav.Experience': 'Experiencia',
     'nav.Contact': 'Contacto',
     "home.title": "Hola, soy",
-
+    "projects.siteUrl": "Ver sitio",
+    "projects.codeUrl": "Ver código",
   },
 };

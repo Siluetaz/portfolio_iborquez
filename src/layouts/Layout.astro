@@ -2,7 +2,7 @@
 import NavigationBar from "components/NavigationBar.astro";
 import { getLangFromUrl } from "../i18n/utils";
 import "@fontsource-variable/quicksand";
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
 	title: string;
@@ -51,12 +51,12 @@ if (localTheme) {
 		body {
 			font-family: "Quicksand Variable", sans-serif;
 		}
-		section{
+		section {
 			padding: 4.5rem 1rem;
 			min-height: 100vh;
 		}
-		section{
-
+		.no-scroll::-webkit-scrollbar {
+			display: none;
 		}
 	</style>
 </html>

@@ -2,10 +2,10 @@
 import type { GetStaticPaths } from "astro";
 import Layout from "../../layouts/Layout.astro";
 import Home from 'components/Home.astro';
-import Projects from 'components/Projects.astro';
 import About from 'components/About.astro';
 import Experience from 'components/Experience.astro';
 import Contact from 'components/Contact.astro';
+import Projects from 'components/projects/Projects.astro';
 export const getStaticPaths = (() => {
 	return [{ params: { lang: "es" } }, { params: { lang: "en" } }];
 }) satisfies GetStaticPaths;
