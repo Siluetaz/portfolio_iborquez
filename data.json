@@ -18,9 +18,9 @@
         "HTML",
         "Tailwind",
         "React",
-        "Next.js",
+        "Next",
         "Figma",
-        "VSC"
+        "visual"
       ],
       "links": {
         "siteUrl": "https://siluetaz.github.io/calculator-app-frontend-mentor/",
@@ -39,8 +39,7 @@
         "Sass",
         "Vue",
         "Figma",
-        "VSC",
-        "Vite",
+        "visual",
         "JS"
       ],
       "links": {
@@ -60,8 +59,7 @@
         "Sass",
         "Vue",
         "Figma",
-        "VSC",
-        "Vite",
+        "visual",
         "JS"
       ],
       "links": {
@@ -80,8 +78,7 @@
         "HTML",
         "Sass",
         "Figma",
-        "VSC",
-        "Vite",
+        "visual",
         "JS"
       ],
       "links": {

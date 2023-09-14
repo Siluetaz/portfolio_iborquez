@@ -29,11 +29,11 @@ const Card = ({ lang, project }: Props) => {
 
   return (
     <div onMouseEnter={() => play(slider)} onMouseLeave={() => pause(slider)}
-      className="w-[18rem] sm:w-[26rem] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-between pb-5"
+      className="w-[20rem] sm:w-[26rem] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-between pb-5 h-full min-h-[30rem]"
     >
       <div className='grow-1'>
         <a href="#">
-          <img className="rounded-t-lg" src={desktop} alt="" />
+          <img className="rounded-t-lg h-[150px] w-full" src={desktop} alt="" />
         </a>
         <div className="p-5 w-full">
           <a href="#">
@@ -43,7 +43,7 @@ const Card = ({ lang, project }: Props) => {
               {name}
             </h5>
           </a>
-          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 h-[8rem]">
+          <p className="font-normal text-gray-700 dark:text-gray-400 h-[8rem]">
             {description}
           </p>
         </div>
