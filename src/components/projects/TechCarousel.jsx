@@ -54,9 +54,9 @@ const TechCarousel = ({ technologies, slider }) => {
 
 
   return (
-    <div className='minw-[18.5rem] sm:min-w-[26rem]'>
+    <div className='min-w-[18.5rem] sm:min-w-[26rem]'>
       {
-        technologies.length > 4 ?
+        technologies.length > 3 ?
           <Slider ref={slider} {...settings} className={''}>
             {
               technologies.map((tech, index) => {
@@ -72,7 +72,7 @@ const TechCarousel = ({ technologies, slider }) => {
             }
           </Slider>
           :
-          <div className='flex justify-center gap-10'>
+          <div className='flex justify-center gap-10 h-[40.8px]'>
             {
               technologies.map((tech, index) => {
                 const selectedIcon = icons.find((icon) => icon.name.toLowerCase().includes(tech.toLowerCase()))

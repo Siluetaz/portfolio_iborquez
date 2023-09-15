@@ -29,7 +29,7 @@ const Card = ({ lang, project }: Props) => {
 
   return (
     <div onMouseEnter={() => play(slider)} onMouseLeave={() => pause(slider)}
-      className="w-[18.5rem] sm:w-[26rem] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-between pb-5 h-full min-h-[31.5rem]"
+      className="w-[18.5rem] sm:w-[26rem] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-between pb-5 h-full min-h-[33.5rem]"
     >
       <div className=''>
         <a >
@@ -62,7 +62,9 @@ const Card = ({ lang, project }: Props) => {
                 >
                   {t("projects." + key)}
                 </a>
-              ) : null
+              ) : <a className={'opacity-0 inline-block px-3 py-1 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-200'}>
+                a
+              </a>
             )
           }
         </div>
