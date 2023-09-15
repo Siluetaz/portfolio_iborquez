@@ -8,7 +8,5 @@ import node from "@astrojs/node";
 export default defineConfig({
   integrations: [tailwind(), react()],
   output: 'hybrid',
-  adapter: node({
-    mode: "middleware"
-  })
+  adapter: node()
 });
