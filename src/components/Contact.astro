@@ -1,6 +1,12 @@
 ---
-
+import { getLangFromUrl, useTranslations } from "i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+import ContactForm from "components/ContactForm";
+const t = useTranslations(lang);
 ---
-<section id='contact'>
-  <h1>Contact</h1>
+
+<section id="contact" class='flex justify-center max-w-2xl mx-auto w-full flex-col gap-10'>
+    <h2 class='font-semibold text-2xl border-1 underline-offset-4 underline decoration-primary dark:decoration-primary'>{t('contact.title')}</h2>
+    <!-- <hr class='rounded border-primary'> -->
+  <ContactForm  client:visible lang={lang} />
 </section>

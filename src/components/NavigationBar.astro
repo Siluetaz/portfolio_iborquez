@@ -4,8 +4,8 @@ import { getLangFromUrl, useTranslations } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 ---
 
-<header class='sticky top-0'>
-  <nav class="bg-white dark:bg-background absolute top-0 inset-x-0">
+<header class='sticky top-0 z-[1]'>
+  <nav class="bg-white dark:bg-background absolute top-0 inset-x-0 border-b-gray-500/10 border-b">
     <div
       class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
     >

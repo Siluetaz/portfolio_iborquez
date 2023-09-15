@@ -3,5 +3,5 @@ export const navItems = [
   {label: "About", path: "about"},
   {label: "Projects", path: "projects"},
   // {label: "Experience", path: "experience"},
-  // {label: "Contact", path: "contact"},
+  {label: "Contact", path: "contact"},
 ]

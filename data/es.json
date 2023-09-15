@@ -1,7 +1,7 @@
 {
   "aboutData": {
     "name": "Ismael Borquez",
-    "degree": "Analista Programador",
+    "degree": "Desarrollador web",
     "subtitle": "Me considero alguien...",
     "presentationCard": "Trabajador, que se desenvuelve bien en equipo, con altas capacidades interpersonales y de organización, siempre a la espera de adquirir nuevas habilidades y de crecer profesionalmente, proactivo e independiente, siendo la responsabilidad mi valor más potente.",
     "toolsTitle": "Herramientas que he utilizado"
@@ -28,12 +28,12 @@
       }
     },
     {
-      "name": "Content Admin to Nefuen Trading Website",
+      "name": "CMS Nefuen Trading Website",
       "imgDirection": {
         "desktop": "/images/strapi.png",
         "mobile": "/images/calculator-app-mobile.webp"
       },
-      "description": "CMS realizado para la empresa Nefuen Trading, con el fin de administrar el contenido de su página web.",
+      "description": "CMS (Content Management System) realizado para la empresa Nefuen Trading, con el fin de administrar el contenido de su página web.",
       "technologies": [
         "Strapi",
         "Sqlite"
@@ -64,7 +64,7 @@
       }
     },
     {
-      "name": "Interactive card",
+      "name": "Interactive credit card",
       "imgDirection": {
         "desktop": "/images/interactive-card.webp",
         "mobile": "/images/interactive-card-mobile.webp"

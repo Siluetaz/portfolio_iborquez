@@ -29,7 +29,7 @@ const Card = ({ lang, project }: Props) => {
 
   return (
     <div onMouseEnter={() => play(slider)} onMouseLeave={() => pause(slider)}
-      className="w-[18.5rem] sm:w-[26rem] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-between pb-5 h-full min-h-[33.5rem]"
+      className="w-[18.5rem] sm:w-[26rem] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-between pb-5 h-full min-h-[33.5rem] sm:min-h-[31.5rem] hover:scale-105 transition-transform duration-200"
     >
       <div className=''>
         <a >
@@ -58,13 +58,11 @@ const Card = ({ lang, project }: Props) => {
                   key={value + ''}
                   href={value as string}
                   target="_blank"
-                  className="inline-block px-3 py-1 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-200"
+                  className="inline-block px-3 py-1 text-sm font-semibold text-gray-700 bg-gray-200 hover:bg-primary dark:hover:bg-primary rounded-full dark:bg-gray-700 dark:text-gray-200 transition-colors duration-200"
                 >
                   {t("projects." + key)}
                 </a>
-              ) : <a className={'opacity-0 inline-block px-3 py-1 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-200'}>
-                a
-              </a>
+              ) : null
             )
           }
         </div>

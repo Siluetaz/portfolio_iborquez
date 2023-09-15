@@ -9,6 +9,7 @@ interface Props {
 }
 const lang = getLangFromUrl(Astro.url);
 const { title } = Astro.props;
+import toast, { Toaster } from "react-hot-toast";
 ---
 
 <script is:inline>
@@ -29,15 +30,26 @@ if (localTheme) {
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="dark:bg-background bg-white text-black dark:text-white">
+	<body class="dark:bg-background bg-white text-black dark:text-white scroll">
 		<NavigationBar />
 		<slot />
+		<Toaster
+			position="bottom-center"
+			toastOptions={{
+				style: {
+					background: "#363636",
+					color: "#fff",
+				},
+			}}
+			client:only
+		/>
 	</body>
 
 	<style is:global>
+
 		:root {
-			--background: 19, 21, 26;
-			--primary: 156, 246, 246;
+			--primary: 109 173 213;
+			--background: 255 255 255;
 			--accent: 136, 58, 234;
 			--accent-light: 224, 204, 250;
 			--accent-dark: 49, 10, 101;
@@ -48,6 +60,12 @@ if (localTheme) {
 				white 60%
 			);
 		}
+		.dark {
+			/* --primary: 156 246 246; */
+			/* --primary: 73 111 114; */
+			--background: 19 21 26;
+			--primary: 97 148 152;
+		}
 		body {
 			font-family: "Quicksand Variable", sans-serif;
 		}
@@ -57,6 +75,19 @@ if (localTheme) {
 		}
 		.no-scroll::-webkit-scrollbar {
 			display: none;
+		}
+
+		 .scroll::-webkit-scrollbar {
+			@apply w-[13px];
+		}
+		 .scroll::-webkit-scrollbar-track {
+			@apply bg-background;
+		}
+		 .scroll::-webkit-scrollbar-thumb {
+			@apply bg-primary;
+		}
+		 .scroll::-webkit-scrollbar-thumb:hover {
+			@apply bg-primary/70;
 		}
 	</style>
 </html>
