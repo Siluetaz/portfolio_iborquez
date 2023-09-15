@@ -1,9 +1,9 @@
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
 import LanguagePicker from "components/LanguagePicker";
 import ThemePicker from "components/ThemePicker";
 import { useState } from 'react';
 import { navItems } from 'utils/navigationLinks';
-import { BriefcaseIcon, CodeIcon, MailboxIcon, PersonStandingIcon, UserIcon } from 'lucide-react';
+import { BriefcaseIcon, CodeIcon, MailboxIcon, UserIcon } from 'lucide-react';
 interface Props {
   lang: string;
   children?: any;

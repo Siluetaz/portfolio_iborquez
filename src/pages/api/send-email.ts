@@ -12,7 +12,12 @@ export const POST: APIRoute = async ({ request }: APIContext) => {
       subject: 'Contactado desde iborquez.tech',
       react: EmailTemplate({ name, email, message }),
     });
-
+    if(!data) {
+      return new Response(null, {
+        status: 500,
+        statusText: 'Internal Server Error'
+      });
+    }
     return new Response(JSON.stringify({
       message: "success"
     }));
