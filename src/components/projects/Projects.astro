@@ -5,7 +5,7 @@ import Card from "./Card";
 const lang = getLangFromUrl(Astro.url);
 ---
 
-<section id="projects" class="flex gap-10 overflow-x-auto no-scroll">
+<section id="projects" class="flex gap-10 overflow-x-auto no-scroll items-center">
   {
     projects.map((project) => (
       <Card client:only lang={lang} project={project} />

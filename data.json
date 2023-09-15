@@ -23,8 +23,24 @@
         "visual"
       ],
       "links": {
-        "siteUrl": "https://siluetaz.github.io/calculator-app-frontend-mentor/",
-        "codeUrl": "https://github.com/Siluetaz/calculator-app-frontend-mentor"
+        "siteUrl": "https://nefuentrading.cl",
+        "codeUrl": ""
+      }
+    },
+    {
+      "name": "Content Admin to Nefuen Trading Website",
+      "imgDirection": {
+        "desktop": "/images/strapi.png",
+        "mobile": "/images/calculator-app-mobile.webp"
+      },
+      "description": "CMS realizado para la empresa Nefuen Trading, con el fin de administrar el contenido de su página web.",
+      "technologies": [
+        "Strapi",
+        "Sqlite"
+      ],
+      "links": {
+        "siteUrl": "",
+        "codeUrl": ""
       }
     },
     {
