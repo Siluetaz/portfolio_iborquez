@@ -2,8 +2,9 @@ import type { APIRoute, APIContext } from 'astro';
 import EmailTemplate from 'components/EmailTemplate';
 import { Resend } from 'resend';
 const resend = new Resend(import.meta.env.RESEND_API_KEY);
+export const prerender = false;
 
-export const POST: APIRoute = async ({ request }: APIContext) => {
+export async function POST( { request }: APIContext ) {
   const { name, email, message } = await request.json();
   try {
     const data = await resend.emails.send({

@@ -6,9 +6,9 @@ import node from "@astrojs/node";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "hybrid",
   integrations: [tailwind(), react()],
+  output: 'hybrid',
   adapter: node({
-    mode: "standalone"
+    mode: "middleware"
   })
 });
