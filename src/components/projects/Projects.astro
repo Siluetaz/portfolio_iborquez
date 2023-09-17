@@ -1,22 +1,36 @@
 ---
-import { getLangFromUrl } from "i18n/utils";
+import { getLangFromUrl, useTranslations } from "i18n/utils";
 import { projects as es } from "../../../data/es.json";
 import { projects as en } from "../../../data/en.json";
+import ProjectsCarousel from "./ProjectsCarousel";
+import SliderButtons from "./SliderButtons";
 let projects = [];
-import Card from "./Card";
 const lang = getLangFromUrl(Astro.url);
 if (lang === "es") {
   projects = es;
 } else {
   projects = en;
 }
-
+const t = useTranslations(lang);
 ---
 
-<section id="projects" class="flex gap-10 overflow-x-auto no-scroll items-center">
-  {
-    projects.map((project: any) => (
-      <Card client:only lang={lang} project={project} />
-    ))
-  }
+<section id="projects" class="flex justify-center flex-col gap-5 w-full">
+  <div class="flex justify-between items-center">
+    <h2
+      class="font-semibold text-2xl border-1 underline-offset-4 underline decoration-primary dark:decoration-primary"
+    >
+      {t("projects.title")}
+    </h2>
+    <SliderButtons client:only/>
+  </div>
+  <div>
+    <ProjectsCarousel client:only projects={projects} lang={lang} />
+  </div>
+  <!-- <div class="sm:hidden flex gap-10 overflow-x-auto no-scroll items-center snap-x snap-mandatory snap-center">
+    {
+      projects.map((project: any) => (
+        <Card client:only lang={lang} project={project} />
+      ))
+    }
+  </div> -->
 </section>

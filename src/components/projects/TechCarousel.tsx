@@ -5,11 +5,16 @@ import { useEffect, useRef, useState } from 'react';
 import { FaReact } from 'react-icons/fa';
 import { SiHtml5, SiJavascript, SiNextdotjs, SiSqlite, SiStrapi, SiTailwindcss, SiVisualstudiocode } from 'react-icons/si';
 import { TiCss3 } from 'react-icons/ti';
-import { DiJavascript, DiSass } from 'react-icons/di';
+import { DiSass } from 'react-icons/di';
 import { BiLogoVuejs } from 'react-icons/bi';
 import { FiFigma } from 'react-icons/fi';
 
-const TechCarousel = ({ technologies, slider }) => {
+interface Props {
+  technologies: string[];
+  isSelected?: boolean;
+}
+const TechCarousel = ({ technologies, isSelected }: Props) => {
+  const slider = useRef(null);
   const [icons] = useState([
     { icon: FaReact, color: 'text-blue-400', name: 'react' },
     { icon: SiNextdotjs, color: 'text-gray-200', name: 'next' },
@@ -51,10 +56,19 @@ const TechCarousel = ({ technologies, slider }) => {
   //   const { current: { slickPlay } } = slider
   //   slickPlay()
   // }
+  useEffect(() => {
+    if (slider) {
+      if (isSelected) {
+        slider?.current?.slickPlay()
+      } else {
+        slider?.current?.slickPause()
 
+      }
+    }
+  }, [isSelected, slider])
 
   return (
-    <div className='min-w-[18.5rem] sm:min-w-[26rem]'>
+    <div className='min-w-[18.5rem] sm:min-w-[26rem] overflow-hidden px-5'>
       {
         technologies.length > 3 ?
           <Slider ref={slider} {...settings} className={''}>

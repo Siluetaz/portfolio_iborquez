@@ -1,14 +1,16 @@
 import { useTranslations, getLangFromUrl } from "i18n/utils";
 import TechCarousel from "./TechCarousel";
 import { useEffect, useRef } from 'react';
+import { cn } from 'lib/utils';
 
 interface Props {
   lang: any
   project: any
+  className?: string
+  isSelected?: boolean
 }
 
-const Card = ({ lang, project }: Props) => {
-  const slider = useRef(null);
+const Card = ({ lang, project, className, isSelected = true }: Props) => {
   const t = useTranslations(lang);
   const {
     links,
@@ -28,9 +30,13 @@ const Card = ({ lang, project }: Props) => {
   }
 
   return (
-    <div onMouseEnter={() => play(slider)} onMouseLeave={() => pause(slider)}
-      className="w-[18.5rem] sm:w-[26rem] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-between pb-5 h-full min-h-[33.5rem] sm:min-h-[31.5rem] hover:scale-105 transition-transform duration-200"
+    <div
+      className={cn("w-[18.5rem] xs:w-[22rem] sm:w-[26rem] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-between pb-5 h-full min-h-[33.5rem] sm:min-h-[31.5rem] transition-transform duration-200 relative my-5", className)}
     >
+      {
+        !isSelected ?
+        <div className='inset-0 absolute bg-gray-300/30 dark:bg-gray-900/70 z-[1]'></div>:null
+      }
       <div className=''>
         <a >
           <img className="rounded-t-lg h-[180px] w-full object-cover" src={desktop} alt="" />
@@ -49,7 +55,7 @@ const Card = ({ lang, project }: Props) => {
         </div>
       </div>
       <div className='flex flex-col gap-5'>
-        <TechCarousel slider={slider} technologies={technologies} />
+        <TechCarousel isSelected={isSelected} technologies={technologies} />
         <div className="flex items-center justify-center gap-5 grow-0">
           {
             Object.entries(links).map(([key, value]) =>
