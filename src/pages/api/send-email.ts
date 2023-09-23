@@ -8,7 +8,7 @@ export async function POST( { request }: APIContext ) {
   const { name, email, message } = await request.json();
   try {
     const data = await resend.emails.send({
-      from: `Contacto <${import.meta.SEDER_EMAIL}>`,
+      from: `Contacto <${import.meta.SENDER_EMAIL}>`,
       to: [import.meta.RECEIVER_EMAIL],
       subject: 'Contactado desde iborquez.tech',
       react: EmailTemplate({ name, email, message }),
