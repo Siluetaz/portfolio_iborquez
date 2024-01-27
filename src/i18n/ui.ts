@@ -27,7 +27,7 @@ export const ui: UI = {
     "form.sending": "Sending...",
     "form.success": "Message sent successfully!",
     "form.error": "An error occurred while sending the message, please try again later.",
-    "contact.title": "Contact me",
+    "contact.title": "Contact",
     "projects.title": "Projects",
   },
   es: {
@@ -47,7 +47,7 @@ export const ui: UI = {
     "form.sending": "Enviando...",
     "form.success": "Mensaje enviado correctamente!",
     "form.error": "Ocurrió un error al enviar el mensaje, por favor intenta más tarde.",
-    "contact.title": "Contáctame",
+    "contact.title": "Contacto",
     "projects.title": "Proyectos",
   },
 };
